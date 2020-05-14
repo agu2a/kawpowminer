@@ -1134,7 +1134,7 @@ std::string ApiConnection::getHttpMinerStatDetail()
          << "<th class=right>Solutions</th>"
          << "<th class=right>Temp.</th>"
          << "<th class=right>Fan %</th>"
-         << "<th class=right>Power</th>"
+         << "<th class=right>Power (Watts)</th>"
          << "</tr>"
          << "</thead><tbody>";
 
@@ -1168,9 +1168,9 @@ std::string ApiConnection::getHttpMinerStatDetail()
         _ret << "<td class=right>" << dev::getFormattedHashes(hashrate) << "</td>";
 
         _ret << "<td class=right>" << device["mining"]["shares"][0].asString() << "</td>";
-        _ret << "<td class=right>" << device["hardware"]["sensors"][0].asString() << "</td>";
+        _ret << "<td class=right>" << device["hardware"]["sensors"][0].asString() << "&#8451;</td>";
         _ret << "<td class=right>" << device["hardware"]["sensors"][1].asString() << "</td>";
-        _ret << "<td class=right>" << device["hardware"]["sensors"][2].asString() << "</td>";
+        _ret << "<td class=right>" << device["hardware"]["sensors"][2].asString() << " W</td>";
 
         _ret << "</tr>";  // Close row
     }
